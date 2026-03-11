@@ -11,7 +11,7 @@ public class Payment {
     String transactionId;
 
     public Payment() {
-        paymentAmount = BigDecimal.valueOf(138999);
+        paymentAmount = BigDecimal.valueOf(459);
         paymentStatus = "SUCCESSFUL";
         paymentDate = "01/03/2026";
         paymentMethod = "UPI";

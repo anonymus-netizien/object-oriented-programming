@@ -1,7 +1,6 @@
 package com.java.oop;
 
 import java.math.BigDecimal;
-import java.util.SortedMap;
 
 public class Main {
     static void main(String[] args) {
@@ -40,18 +39,6 @@ public class Main {
 
         System.out.println();
 
-        System.out.println("Order Details:-");
-        Order order1 = new Order();
-        System.out.println("Product ID: " + order1.productId);
-        System.out.println("Product Name: " + order1.productName);
-        System.out.println("Quantity: " + order1.quantity);
-        System.out.println("Product Price: " + order1.unitPrice);
-        System.out.println("Discount Applied: " + order1.discountApplied);
-        System.out.println("TAX Applied: " + order1.taxApplied);
-        System.out.println("Subtotal: " + order1.subTotal);
-
-        System.out.println();
-
         System.out.println("Payment Details:-");
         Payment payment1 = new Payment();
         System.out.println("Payment Amount: ₹" + payment1.paymentAmount);
@@ -59,6 +46,18 @@ public class Main {
         System.out.println("Payment Date: " + payment1.paymentDate);
         System.out.println("Payment Method: " + payment1.paymentMethod);
         System.out.println("Transaction ID: " + payment1.transactionId);
+
+        System.out.println();
+
+        System.out.println("Order Details:-");
+        Order order1 = new Order();
+        System.out.println("Order ID: " + order1.orderId);
+        System.out.println("Order Date: " + order1.orderDate);
+        System.out.println("Order Status: " + order1.status);
+        System.out.println("Dispatch Date: " + order1.dispatchDate);
+        System.out.println("Expected Delivery on : " + order1.expectedDeliveryDate);
+        System.out.println("Delivery Address: " + order1.deliveryAddress);
+        System.out.println("Order Value: " + order1.orderAmount);
 
         System.out.println();
 
@@ -96,18 +95,6 @@ public class Main {
 
         System.out.println();
 
-        System.out.println("Order Details:-");
-        Order order2 = new Order("M84576998","Samsung S26 Ultra 5G", (byte) 1,new BigDecimal(139999),new BigDecimal(1000),"including GST",new BigDecimal(138999));
-        System.out.println("Product ID: " + order2.productId);
-        System.out.println("Product Name: " + order2.productName);
-        System.out.println("Quantity: " + order2.quantity);
-        System.out.println("Product Price: " + order2.unitPrice);
-        System.out.println("Discount Applied: " + order2.discountApplied);
-        System.out.println("TAX Applied: " + order2.taxApplied);
-        System.out.println("Subtotal: " + order2.subTotal);
-
-        System.out.println();
-
         System.out.println("Payment Details:-");
         Payment payment2 = new Payment(new BigDecimal(138999),"SUCCESSFUL","01/03/2026","Credit Card","pay_n85yt9498yt5y9h");
         System.out.println("Payment Amount: ₹" + payment2.paymentAmount);
@@ -115,6 +102,23 @@ public class Main {
         System.out.println("Payment Date: " + payment2.paymentDate);
         System.out.println("Payment Method: " + payment2.paymentMethod);
         System.out.println("Transaction ID: " + payment2.transactionId);
+
+        System.out.println();
+
+        System.out.println("Order Details:-");
+        Order order2 = new Order("78436-734434-4352","03/03/2026","dispatched","04/03/2026","06/03/2026","Hyderabad",new BigDecimal(138999));
+        System.out.println("Product ID: " + order2.orderId);
+        System.out.println("Order Date: " + order2.orderDate);
+        System.out.println("Order Status: " + order2.status);
+        System.out.println("Dispatch Date: " + order2.dispatchDate);
+        System.out.println("Expected Delivery on : " + order2.expectedDeliveryDate);
+        System.out.println("Delivery Address: " + order2.deliveryAddress);
+        System.out.println("Order Value: " + order2.orderAmount);
+
+        System.out.println();
+
+
+
     }
 }
 

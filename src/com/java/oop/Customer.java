@@ -3,7 +3,7 @@ package com.java.oop;
 public class Customer {
     //state variables
     int id;
-    String name;
+    public String name;
     String email;
     String password;
     byte age;
