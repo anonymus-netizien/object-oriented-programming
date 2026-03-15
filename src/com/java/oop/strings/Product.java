@@ -16,4 +16,9 @@ public class Product {
         this.maxRetailPrice = maxRetailPrice;
         this.discountPercentage = discountPercentage;
     }
+
+    public void displayProductDetails() {
+        System.out.println("----------------------------------------------------------------------------------- ");
+        System.out.printf("%-12d %-30s %-20s %-20.1f\n", id, name, maxRetailPrice, discountPercentage);
+    }
 }
