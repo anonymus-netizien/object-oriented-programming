@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class Main {
     static void main(String[] args) {
-        Customer customer = new Customer();
-        customer.setId(101)
+        Customer customer1 = new Customer();
+        customer1.setId(101)
                 .setName("customer1")
                 .setEmail("customer1@gmail.com")
                 .setPhoneNo(9876543210L)
@@ -13,14 +13,14 @@ public class Main {
                 .setPassword("customer@123");
 
         System.out.println("Customer Details:");
-        System.out.println("ID: " + customer.getId());
-        System.out.println("Name: " + customer.getName());
-        System.out.println("Email: " + customer.getEmail());
-        System.out.println("Phone No: " + customer.getPhoneNo());
-        System.out.println("Active: " + customer.isActive());
+        System.out.println("ID: " + customer1.getId());
+        System.out.println("Name: " + customer1.getName());
+        System.out.println("Email: " + customer1.getEmail());
+        System.out.println("Phone No: " + customer1.getPhoneNo());
+        System.out.println("Active: " + customer1.isActive());
         System.out.println();
         System.out.println("--------- Using toString ---------");
-        System.out.println(customer);
+        System.out.println(customer1);
 
         Customer customer2 = new Customer();
         customer2.setId(102).setName("Customer2").setPassword("customer2@123");

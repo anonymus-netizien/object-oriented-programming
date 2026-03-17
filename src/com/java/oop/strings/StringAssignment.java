@@ -14,20 +14,20 @@ public class StringAssignment {
         return customers;
     }
 
-    public static Product[] getProductsFromString(String[] ProductData) {
-        Product[] products = new Product[ProductData.length];
-        for (int index = 0; index < ProductData.length; index++) {
-            String[] splitProductData = ProductData[index].split(",");
+    public static Product[] getProductsFromString(String[] productData) {
+        Product[] products = new Product[productData.length];
+        for (int index = 0; index < productData.length; index++) {
+            String[] splitProductData = productData[index].split(",");
             Product product = new Product(Integer.parseInt(splitProductData[0].trim()), splitProductData[1], new BigDecimal(splitProductData[2].trim()), Float.parseFloat(splitProductData[3].trim()));
             products[index] = product;
         }
         return products;
     }
 
-    public static Payment[] getPaymentsFromString(String[] PaymentData) {
-        Payment[] payments = new Payment[PaymentData.length];
-        for (int index = 0; index < PaymentData.length; index++) {
-            String[] splitPaymentData = PaymentData[index].split(",");
+    public static Payment[] getPaymentsFromString(String[] paymentData) {
+        Payment[] payments = new Payment[paymentData.length];
+        for (int index = 0; index < paymentData.length; index++) {
+            String[] splitPaymentData = paymentData[index].split(",");
             Payment payment = new Payment(new BigDecimal(splitPaymentData[0].trim()), splitPaymentData[1], splitPaymentData[2], splitPaymentData[3], splitPaymentData[4]);
             payments[index] = payment;
         }
@@ -48,7 +48,7 @@ public class StringAssignment {
                 "10,Pooja Kulkarni,pooja.kulkarni@example.com,true",
         };
 
-        String[] ProductData = {
+        String[] productData = {
                 "1,Wireless Mouse,799.00,10.0",
                 "2,Bluetooth Headphones,2499.00,15.5",
                 "3,Mechanical Keyboard,4599.00,12.0",
@@ -61,7 +61,7 @@ public class StringAssignment {
                 "10,Noise Cancelling Earbuds,5499.00,22.0"
         };
 
-        String[] PaymentData = {
+        String[] paymentData = {
                 "459,SUCCESSFUL,01/03/2026,UPI,pay_h9584yt804985",
                 "1299,FAILED,02/03/2026,CREDIT_CARD,pay_k3847gh920384",
                 "799,SUCCESSFUL,03/03/2026,DEBIT_CARD,pay_m8475jk203948",
@@ -84,7 +84,7 @@ public class StringAssignment {
         System.out.println();
         System.out.println();
 
-        Product[] products = getProductsFromString(ProductData);
+        Product[] products = getProductsFromString(productData);
         System.out.println("----------------------------------------------------------------------------------- ");
         System.out.printf("%-12s %-30s %-20s %-20s\n", "ProductId", "Name", "MaxRetailPrice", "DiscountPercentage");
         for (Product product : products) {
@@ -94,7 +94,7 @@ public class StringAssignment {
         System.out.println();
         System.out.println();
 
-        Payment[] payments = getPaymentsFromString(PaymentData);
+        Payment[] payments = getPaymentsFromString(paymentData);
         System.out.println("----------------------------------------------------------------------------------------- ");
         System.out.printf("%-15s %-15s %-20s %-22s %-20s\n", "PaymentAmount", "PaymentDate", "PaymentMethod", "Transaction-Id", "PaymentStatus");
         for (Payment payment : payments) {
