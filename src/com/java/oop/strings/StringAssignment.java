@@ -24,6 +24,16 @@ public class StringAssignment {
         return products;
     }
 
+    public static Order[] getOrdersFromString(String[] orderData) {
+        Order[] orders = new Order[orderData.length];
+        for (int index = 0; index < orderData.length; index++) {
+            String[] splitOrderData = orderData[index].split(",");
+            Order order = new Order(splitOrderData[0],splitOrderData[1],splitOrderData[2],splitOrderData[3],splitOrderData[4],splitOrderData[5], new BigDecimal(splitOrderData[6].trim()));
+            orders[index] = order;
+        }
+        return orders;
+    }
+
     public static Payment[] getPaymentsFromString(String[] paymentData) {
         Payment[] payments = new Payment[paymentData.length];
         for (int index = 0; index < paymentData.length; index++) {
@@ -61,6 +71,14 @@ public class StringAssignment {
                 "10,Noise Cancelling Earbuds,5499.00,22.0"
         };
 
+        String[] orderData = {
+                "ORD12345,2026-03-15,Shipped,2026-03-16,2026-03-20,New Delhi India,1500.50",
+                "ORD12346,2026-03-16,Processing,N/A,2026-03-22,Mumbai India,999.99",
+                "ORD12347,2026-03-17,Delivered,2026-03-17,2026-03-19,Bangalore India,2500.00",
+                "ORD12348,2026-03-18,Cancelled,N/A,N/A,Chennai India,1200.00",
+                "ORD12349,2026-03-19,Shipped,2026-03-20,2026-03-25,Kolkata India,3200.75"
+        };
+
         String[] paymentData = {
                 "459,SUCCESSFUL,01/03/2026,UPI,pay_h9584yt804985",
                 "1299,FAILED,02/03/2026,CREDIT_CARD,pay_k3847gh920384",
@@ -89,6 +107,16 @@ public class StringAssignment {
         System.out.printf("%-12s %-30s %-20s %-20s\n", "ProductId", "Name", "MaxRetailPrice", "DiscountPercentage");
         for (Product product : products) {
             product.displayProductDetails();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        Order[] orders = getOrdersFromString(orderData);
+        System.out.println("-------------------------------------------------------------------------------------------------------------- ");
+        System.out.printf("%-10s %-13s %-15s %-15s %-15s %-20s %-50s \n", "Order ID", "Order Date", "Order Amount", "Order Status", "Dispatch Date", "Expected Delivery", "Delivery Address");
+        for (Order order : orders) {
+            order.displayOrderDetails();
         }
         System.out.println();
         System.out.println();
