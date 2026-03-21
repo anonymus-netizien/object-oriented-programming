@@ -1,6 +1,7 @@
 package com.java.oop.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Product {
     private String category;
@@ -116,6 +117,18 @@ public class Product {
     public Product setDescription(String description) {
         this.description = description;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Float.compare(rating, product.rating) == 0 && Objects.equals(category, product.category) && Objects.equals(subCategory, product.subCategory) && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(brand, product.brand) && Objects.equals(itemForm, product.itemForm) && Objects.equals(itemWeight, product.itemWeight) && Objects.equals(itemVolume, product.itemVolume) && Objects.equals(itemDimensions, product.itemDimensions) && Objects.equals(description, product.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(category, subCategory, name, price, rating, brand, itemForm, itemWeight, itemVolume, itemDimensions, description);
     }
 
     @Override
